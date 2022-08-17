@@ -1,60 +1,60 @@
-# LayerZero - an Omnichain Interoperability Protocol
+# LayerZero - Omnichain Birlikte Çalışabilirlik Protokolü
 
-This repository contains the smart contracts for LayerZero Endpoints. For developers looking to build on top of LayerZero please refer to the [docs](https://layerzero.gitbook.io/docs/) 
+Bu depo, LayerZero Endpoints için akıllı sözleşmeleri içerir. LayerZero'nun üzerinde inşa etmek isteyen geliştiriciler için lütfen [belgelere](https://layerzero.gitbook.io/docs/) bakın.
 
-## Overview
-LayerZero is an Omnichain Interoperability Protocol designed for lightweight message passing across chains. LayerZero provides authentic and guaranteed message delivery with configurable trustlessness. The protocol is implemented as a set of gas-efficient, non-upgradable smart contracts.
+## Genel Bakış
+LayerZero, zincirler arasında hafif ileti aktarımı için tasarlanmış bir Omnichain Birlikte Çalışabilirlik Protokolüdür. LayerZero, yapılandırılabilir güvenilmezlik ile özgün ve garantili mesaj teslimi sağlar. Protokol, GAS açısından verimli, yükseltilemeyen bir dizi akıllı sözleşme olarak uygulanmaktadır.
 
-## Development
-### Interfaces
-add this to your package.json
+## Geliştirme
+### Arayüzler
+Bunu package.json dosyanıza ekleyin.
 
 `
     "@layerzerolabs/contracts": "latest",
 `
-### Setup
-- copy .env.example to .env and fill in variables
+### Kurulum
+- .env.example dosyasını .env dosyası olarak kopyalayın ve değişkenleri ekleyin.
 - `yarn install`
-### Testing
+### Test Etme
 `yarn test`
-#### Single Test File
+#### Tek Test Dosyası
 `yarn test test/Endpoint.test.js`
-### Gas Uasge
+### Gas Kullanımı
 `yarn test:gas`
-### Coverage
+### Kapsam
 `yarn test:coverage`
 ### Lint
 `yarn lint`
 
-only lints .js/.ts files
+yalnızca lintleri içeren .js/.ts dosyaları
 
-## Deployment
+## Dağıtım
 
-Deploy networks are generated based on tags.
+Dağıtım ağları, etiketlere göre oluşturulur.
 
 #### Hardhat
 `yarn dev`
 
-spins up local environment and deploys contracts 
+yerel ortamı harekete geçirir ve sözleşmeleri devreye alır
 
-#### Development
+#### Geliştirme
 ```
 hardhat --network rinkeby-testnet deploy
 hardhat --network rinkeby-sandbox deploy
 ```
 
-#### Production
+#### Üretim
 ```
 hardhat --network ethereum deploy
 ```
 
-### Adding a new network
-1. Update [hardhat config](hardhat.config.ts) with network
-   1. refer to [STAGING_MAP](utils/deploy.js) for staging environments supported 
-2. Update [endpoints.json](constants/endpoints.json) with network
-3. Make sure that key in endpoints.json matches network name in hardhat
+### Yeni bir ağ ekleme
+1. Ağ ile [hardhat config](hardhat.config.ts) güncelleme
+   1. desteklenen hazırlama ortamları için [STAGING_MAP](utils/deploy.js) bölümüne bakın 
+2. Ağ ile [endpoints.json](constants/endpoints.json) güncelleme
+3. endpoints.json'daki anahtarın hardhat'taki ağ adıyla eşleştiğinden emin olun
 
-Example: One LayerZero Network
+Örnek: Tek Katmanlı Sıfır Ağ / One LayerZero Network
 ```
 //hardhat.config.ts
 ethereum: {
@@ -70,8 +70,7 @@ ethereum: {
    }
 }
 ```
-
-Example: More than one LayerZero Network on same chain (using expandNetwork)
+Örnek: Aynı zincir üzerinde birden fazla LayerZero Ağı (expandNetwork kullanarak)
 ```
 //hardhat.config.ts
 ...expandNetwork({
@@ -89,10 +88,10 @@ Example: More than one LayerZero Network on same chain (using expandNetwork)
    }
 }
 ```
-### Acknowledgments
+### Teşekkür
 
-Thank you to the core development team for building the LayerZero Endpoints: Ryan Zarick, Isaac Zhang, Caleb Banister, Carmen Cheng and T. Riley Schwarz 
+LayerZero Endpoints'i oluşturan çekirdek geliştirme ekibine teşekkür ederiz: Ryan Zarick, Isaac Zhang, Caleb Banister, Carmen Cheng ve T. Riley Schwarz
 
 
-### LICENSING
-The primary license for LayerZero is the Business Source License 1.1 (BUSL-1.1). see [`LICENSE`](./LICENSE).
+### LİSANS
+LayerZero için birincil lisans, Business Source License 1.1'dir (BUSL-1.1). bkz. [`LICENSE`](./LICENSE).
